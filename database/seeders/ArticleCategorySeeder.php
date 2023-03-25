@@ -18,7 +18,7 @@ class ArticleCategorySeeder extends Seeder
         $csvFile = fopen(base_path("database/data/articlecategory.csv"), "r");
         $data = fgetcsv($csvFile, 2000); // Column names
 
-        while (($data = fgetcsv($csvFile, 2000, ";")) !== FALSE) {
+        while ($data = fgetcsv($csvFile, 2000, ";")) {
 
             ArticleCategory::create([
                 "id" => $data['0'],
