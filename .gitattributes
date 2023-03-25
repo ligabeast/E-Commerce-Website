@@ -6,7 +6,6 @@
 *.md diff=markdown
 *.php diff=php
 
-*.php linguist-detectable=false
 
 /.github export-ignore
 CHANGELOG.md export-ignore
