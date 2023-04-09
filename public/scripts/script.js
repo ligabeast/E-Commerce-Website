@@ -1,6 +1,7 @@
 let displayingAccountOptions = false;
 const accountOptions = document.getElementById("account");
 const accountButton = document.getElementById("accountButton");
+const accountButtonLabel = document.querySelector(".accountButtonLabel");
 
 let displayingSignIn = false;
 const signInButton = document.getElementById("signInButton");
@@ -119,6 +120,7 @@ signInButton.addEventListener('click', (e)=> {
                 if (response.authenticate) {  //successful
                     hideSignInContainer();
                     document.body.appendChild(successfulDiv);
+                    accountButtonLabel.textContent = response.name
                 } else {                      //not successful
                     showErrorMessageSignIn();
                 }

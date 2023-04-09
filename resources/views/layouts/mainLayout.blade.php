@@ -17,6 +17,19 @@
     <title>Abalo Hauptseite</title>
 </head>
 <body>
+
+<div class="fixed @isset($google)  @else hidden @endisset flex z-50 top-0 left-0 w-fit p-4 m-4 text-white rounded-lg bg-green-600">    <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
+    <span class="sr-only">Info</span>
+    <div class="ml-3 text-sm">
+        <span class="font-bold text-md">Successful, you are now logged in!</span>
+        <span class="font-base"> Good job, you can now browse and find your next nice shopping decision</span>
+    </div>
+    <button onclick="closeNotification(this)" type="button" class=" ml-1.5 -my-1.5 bg-green-50 text-green-500 rounded-lg focus:ring-2 focus:ring-green-400 p-1.5 hover:bg-green-200 inline-flex h-8 w-8" data-dismiss-target="#alert-3" aria-label="Close">
+        <span class="sr-only">Close</span>
+        <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+    </button>
+</div>
+
 <div class="hidden" id="signInContainer">
     <div
         class="fixed inset-0 bg-black opacity-30 justify-center items-center"
@@ -177,10 +190,11 @@
     <head class="h-48 flex flex-col justify-center items-center">
         <div class="flex-col flex items-center justify-center md:flex-row">
             <div class="flex flex-row mx-4">
-                <img
+                <a href ="/">
+                    <img
                     class="mx-auto my-2 wx-auto hover:cursor-pointer inline hover:scale-105 transition"
-                    src="{{asset('images/Logo.png')}}"
-                />
+                    src="{{asset('images/Logo.png')}}" />
+                </a>
                 <div
                     class="mx-3 space-x-2 flex justify-center items-center hover:cursor-pointer group relative"
                     id="accountButton"
@@ -194,7 +208,7 @@
                             class="w-12 inline-block"
                             id="accountButton"
                         />
-                        <span id="accountButton">Account</span>
+                        <span class="accountButtonLabel" id="accountButton">@if(Auth::check()) {{Auth::user()->name}} @else Account @endif</span>
                     </button>
                     <div
                         class="absolute top-16 group w-56 hidden -h-64 border-2 border-black rounded-lg bg-white shadow-2xl px-6 py-2 flex-col space-y-2 divide-y divide-blue-400 text-center text-xl font-semibold"

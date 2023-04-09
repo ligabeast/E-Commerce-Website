@@ -21,7 +21,6 @@ class UserSeeder extends Seeder
         while ($data = fgetcsv($csvFile, 2000, ";")) {
 
             User::create([
-                "id" => $data['0'],
                 "name" => $data['1'],
                 "password" => Hash::make($data['2']),
                 "email" => $data['3'],
