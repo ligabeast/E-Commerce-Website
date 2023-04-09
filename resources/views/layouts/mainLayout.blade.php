@@ -26,65 +26,77 @@
         id="signInWindow"
         class="fixed inset-0 m-auto max-w-md h-fit bg-white py-4 px-8 rounded-md shadow-xl"
     >
-        <div class="flex relative flex-col py-4">
-            <p class="text-2xl font-semibold text-center py-6">Log in with</p>
-            <div class="flex flex-row space-x-3 w-full justify-between pb-5">
-                <button
-                    class="h-16 w-44 text-lg rounded-lg bg-white font-semibold border-2 border-black hover:-translate-y-0.5 hover:shadow-2xl shadow-xl duration-100"
+        <form id="signInForm">
+            <div class="flex relative flex-col py-4">
+                <p class="text-2xl font-semibold text-center py-6">Log in with</p>
+                <div class="flex flex-row space-x-3 w-full justify-between pb-5">
+                    <a
+                        href="/login/google-account"
+                        class="h-16 flex items-center justify-center w-44 text-lg rounded-lg bg-white font-semibold border-2 border-black hover:-translate-y-0.5 hover:shadow-2xl shadow-xl duration-100"
+                        id="googleButton"
+                    >
+                        <img class="w-10 inline pr-3" src="{{asset('images/Google.png')}}" />
+                        <span>Google</span>
+                    </a>
+                    <a
+                        class="h-16 w-44  flex items-center justify-center  text-lg rounded-lg bg-white font-semibold border-2 border-black hover:-translate-y-0.5 hover:shadow-2xl shadow-xl duration-100"
+                        id="facebookButton"
+                    >
+                        <img class="w-10 inline pr-3" src="{{asset('images/Facebook.png')}}" />
+                        <span>Facebook</span>
+                    </a>
+                </div>
+                <p class="text-center pb-5">or</p>
+                <div class="relative mt-3">
+                    <input
+                        type="email"
+                        id="emailSignIn"
+                        placeholder="Enter email address"
+                        class="peer w-full h-16 px-5 pb-2 pt-5 rounded-sm text-lg placeholder-transparent outline-0 pointer border-b-2 border-gray-500"
+                    />
+                    <label
+                        for="emailSignIn"
+                        class="peer-placeholder-shown:top-6 peer-placeholder-shown:left-5 peer-placeholder-shown:text-base text-sm peer-placeholder-shown:text-gray-400 text-black pointer-events-none absolute left-3 top-0 transition-all"
+                    >Enter email address</label
+                    >
+                </div>
+                <div class="relative mt-3">
+                    <input
+                        type="password"
+                        id="passwordSignIn"
+                        placeholder="Enter your password"
+                        class="peer w-full h-16 px-5 pb-2 pt-5 rounded-sm text-lg placeholder-transparent outline-0 pointer border-b-2 border-gray-500"
+                    />
+                    <label
+                        for="passwordSignIn"
+                        class="peer-placeholder-shown:top-6 peer-placeholder-shown:left-5 peer-placeholder-shown:text-base text-sm peer-placeholder-shown:text-gray-400 text-black pointer-events-none absolute left-3 top-0 transition-all"
+                    >Enter your password</label
+                    >
+                </div>
+                <p
+                    class="text-red-500 hidden mt-2 cursor-not-allowed select-none"
+                    id="errorMessage"
                 >
-                    <img class="w-10 inline pr-3" src="{{asset('images/Google.png')}}" />
-                    <span>Google</span>
-                </button>
-                <button
-                    class="h-16 w-44 text-lg rounded-lg bg-white font-semibold border-2 border-black hover:-translate-y-0.5 hover:shadow-2xl shadow-xl duration-100"
-                >
-                    <img class="w-10 inline pr-3" src="{{asset('images/Facebook.png')}}" />
-                    <span>Facebook</span>
-                </button>
-            </div>
-            <p class="text-center pb-5">or</p>
-            <div class="relative mt-3">
+                    &#9888; <span class="font-semibold">Error:</span> email or password
+                    incorrect!
+                </p>
+                <input type="hidden" name="_token" id="csrf_token_signin" value="{{ Session::token() }}" />
                 <input
-                    type="email"
-                    id="emailSignIn"
-                    placeholder="Enter email address"
-                    class="peer w-full h-16 px-5 pb-2 pt-5 rounded-sm text-lg placeholder-transparent outline-0 pointer border-b-2 border-gray-500"
+                    type="submit"
+                    value="Log in"
+                    id="signInButton"
+                    class="w-full mt-8 h-16 bg-blue-400 shadow-xl text-white rounded-xl text-lg tracking-wider hover:shadow-2xl hover:bg-blue-600 hover:cursor-pointer duration-100"
                 />
-                <label
-                    for="emailSignIn"
-                    class="peer-placeholder-shown:top-6 peer-placeholder-shown:left-5 peer-placeholder-shown:text-base text-sm peer-placeholder-shown:text-gray-400 text-black pointer-events-none absolute left-3 top-0 transition-all"
-                >Enter email address</label
-                >
+                <p class="mt-4">
+                    Not have account yet?
+                    <a
+                        id="registerLabel"
+                        class="hover:text-blue-800 text-blue-400 hover:cursor-pointer"
+                    >Register</a
+                    >
+                </p>
             </div>
-            <div class="relative mt-3">
-                <input
-                    type="password"
-                    id="passwordSignIn"
-                    placeholder="Enter your password"
-                    class="peer w-full h-16 px-5 pb-2 pt-5 rounded-sm text-lg placeholder-transparent outline-0 pointer border-b-2 border-gray-500"
-                />
-                <label
-                    for="passwordSignIn"
-                    class="peer-placeholder-shown:top-6 peer-placeholder-shown:left-5 peer-placeholder-shown:text-base text-sm peer-placeholder-shown:text-gray-400 text-black pointer-events-none absolute left-3 top-0 transition-all"
-                >Enter your password</label
-                >
-            </div>
-            <input type="hidden" name="_token" id="csrf_token_signin" value="{{ Session::token() }}" />
-            <input
-                type="button"
-                value="Log in"
-                id="signInButton"
-                class="w-full mt-8 h-16 bg-blue-400 shadow-xl text-white rounded-xl text-lg tracking-wider hover:shadow-2xl hover:bg-blue-600 hover:cursor-pointer duration-100"
-            />
-            <p class="mt-4">
-                Not have account yet?
-                <a
-                    id="registerLabel"
-                    class="hover:text-blue-800 text-blue-400 hover:cursor-pointer"
-                >Register</a
-                >
-            </p>
-        </div>
+        </form>
     </div>
 </div>
 

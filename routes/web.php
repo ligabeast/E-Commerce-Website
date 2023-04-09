@@ -17,3 +17,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [indexController::class, 'index'])->name('homepage');
 Route::post('/login', [\App\Http\Controllers\AuthenticationController::class, 'login']);
+Route::get('/login/google-account', [\App\Http\Controllers\AuthenticationController::class, 'loginGoogle']);
+Route::get('/login/google-account/callback', [\App\Http\Controllers\AuthenticationController::class, 'loginGoogleCallback']);
+Route::get('/login/facebook-account', [\App\Http\Controllers\AuthenticationController::class, 'loginFacebook']);
