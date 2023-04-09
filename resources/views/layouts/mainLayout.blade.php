@@ -69,15 +69,17 @@
                 >Enter your password</label
                 >
             </div>
+            <input type="hidden" name="_token" id="csrf_token_signin" value="{{ Session::token() }}" />
             <input
                 type="button"
                 value="Log in"
+                id="signInButton"
                 class="w-full mt-8 h-16 bg-blue-400 shadow-xl text-white rounded-xl text-lg tracking-wider hover:shadow-2xl hover:bg-blue-600 hover:cursor-pointer duration-100"
             />
             <p class="mt-4">
                 Not have account yet?
                 <a
-                    id="registerButton"
+                    id="registerLabel"
                     class="hover:text-blue-800 text-blue-400 hover:cursor-pointer"
                 >Register</a
                 >
@@ -151,6 +153,7 @@
             </div>
             <input
                 type="button"
+                id="registerButton"
                 value="Submit"
                 class="w-full mt-8 h-16 bg-blue-400 shadow-xl text-white rounded-xl text-lg tracking-wider hover:shadow-2xl hover:bg-blue-600 hover:cursor-pointer duration-100"
             />
@@ -188,7 +191,7 @@
                         <p
                             class="hover:translate-x-0.5 transition"
                             onclick="showSignInContainer()"
-                            id="signInButton"
+                            id="signInLabel"
                         >
                             Sign in
                         </p>

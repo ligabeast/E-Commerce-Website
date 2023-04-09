@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\IndexController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -14,8 +15,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('homepage');
-});
-
-Auth::routes();
+Route::get('/', [indexController::class, 'index'])->name('homepage');
+Route::post('/login', [\App\Http\Controllers\AuthenticationController::class, 'login']);
