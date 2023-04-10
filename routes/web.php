@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\Controllers\IndexController;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,3 +19,6 @@ Route::post('/login', [\App\Http\Controllers\AuthenticationController::class, 'l
 Route::get('/login/google-account', [\App\Http\Controllers\AuthenticationController::class, 'loginGoogle']);
 Route::get('/login/google-account/callback', [\App\Http\Controllers\AuthenticationController::class, 'loginGoogleCallback']);
 Route::get('/login/facebook-account', [\App\Http\Controllers\AuthenticationController::class, 'loginFacebook']);
+Route::get('/login/facebook-account/callback', [\App\Http\Controllers\AuthenticationController::class, 'loginFacebookCallback']);
+Route::get('/logout', [\App\Http\Controllers\AuthenticationController::class, 'logout']);
+Route::post('/register', [\App\Http\Controllers\AuthenticationController::class, 'register']);

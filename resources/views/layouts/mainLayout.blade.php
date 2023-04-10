@@ -18,7 +18,7 @@
 </head>
 <body>
 
-<div class="fixed @isset($google)  @else hidden @endisset flex z-50 top-0 left-0 w-fit p-4 m-4 text-white rounded-lg bg-green-600">    <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
+<div class="fixed @isset($angemeldet)  @else hidden @endisset flex z-50 top-0 left-0 w-fit p-4 m-4 text-white rounded-lg bg-green-600">    <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
     <span class="sr-only">Info</span>
     <div class="ml-3 text-sm">
         <span class="font-bold text-md">Successful, you are now logged in!</span>
@@ -52,6 +52,7 @@
                         <span>Google</span>
                     </a>
                     <a
+                        href="/login/facebook-account"
                         class="h-16 w-44  flex items-center justify-center  text-lg rounded-lg bg-white font-semibold border-2 border-black hover:-translate-y-0.5 hover:shadow-2xl shadow-xl duration-100"
                         id="facebookButton"
                     >
@@ -125,63 +126,65 @@
         <div class="flex relative flex-col py-4">
             <p class="text-2xl font-semibold text-center py-6">Register</p>
             <div class="relative mt-3">
+                <form id="registerForm">
+                    <input
+                        type="text"
+                        id="fullNameRegister"
+                        placeholder="Enter your fullname"
+                        class="peer w-full h-16 px-5 pb-2 pt-5 rounded-sm text-lg placeholder-transparent outline-0 pointer border-b-2 border-gray-500"
+                    />
+                    <label
+                        for="fullNameRegister"
+                        class="peer-placeholder-shown:top-6 peer-placeholder-shown:left-5 peer-placeholder-shown:text-base text-sm peer-placeholder-shown:text-gray-400 text-black pointer-events-none absolute left-3 top-0 transition-all"
+                    >Enter your fullname</label
+                    >
+                </div>
+                <div class="relative mt-3">
+                    <input
+                        type="email"
+                        id="emailRegister"
+                        placeholder="Enter email address"
+                        class="peer w-full h-16 px-5 pb-2 pt-5 rounded-sm text-lg placeholder-transparent outline-0 pointer border-b-2 border-gray-500"
+                    />
+                    <label
+                        for="emailRegister"
+                        class="peer-placeholder-shown:top-6 peer-placeholder-shown:left-5 peer-placeholder-shown:text-base text-sm peer-placeholder-shown:text-gray-400 text-black pointer-events-none absolute left-3 top-0 transition-all"
+                    >Enter email address</label
+                    >
+                </div>
+                <div class="relative mt-3">
+                    <input
+                        type="password"
+                        id="passwordRegister"
+                        placeholder="Enter your password"
+                        class="peer w-full h-16 px-5 pb-2 pt-5 rounded-sm text-lg placeholder-transparent outline-0 pointer border-b-2 border-gray-500"
+                    />
+                    <label
+                        for="passwordRegister"
+                        class="peer-placeholder-shown:top-6 peer-placeholder-shown:left-5 peer-placeholder-shown:text-base text-sm peer-placeholder-shown:text-gray-400 text-black pointer-events-none absolute left-3 top-0 transition-all"
+                    >Enter your password</label
+                    >
+                </div>
+                <div class="relative mt-3">
+                    <input
+                        type="password"
+                        id="passwordSubmitRegister"
+                        placeholder="Submit your password"
+                        class="peer w-full h-16 px-5 pb-2 pt-5 rounded-sm text-lg placeholder-transparent outline-0 pointer border-b-2 border-gray-500"
+                    />
+                    <label
+                        for="passwordSubmitRegister"
+                        class="peer-placeholder-shown:top-6 peer-placeholder-shown:left-5 peer-placeholder-shown:text-base text-sm peer-placeholder-shown:text-gray-400 text-black pointer-events-none absolute left-3 top-0 transition-all"
+                    >Submit your password</label
+                    >
+                </div>
                 <input
-                    type="text"
-                    id="fullNameRegister"
-                    placeholder="Enter your fullname"
-                    class="peer w-full h-16 px-5 pb-2 pt-5 rounded-sm text-lg placeholder-transparent outline-0 pointer border-b-2 border-gray-500"
+                    type="submit"
+                    id="registerButton"
+                    value="Submit"
+                    class="w-full mt-8 h-16 bg-blue-400 shadow-xl text-white rounded-xl text-lg tracking-wider hover:shadow-2xl hover:bg-blue-600 hover:cursor-pointer duration-100"
                 />
-                <label
-                    for="fullNameRegister"
-                    class="peer-placeholder-shown:top-6 peer-placeholder-shown:left-5 peer-placeholder-shown:text-base text-sm peer-placeholder-shown:text-gray-400 text-black pointer-events-none absolute left-3 top-0 transition-all"
-                >Enter your fullname</label
-                >
-            </div>
-            <div class="relative mt-3">
-                <input
-                    type="email"
-                    id="emailRegister"
-                    placeholder="Enter email address"
-                    class="peer w-full h-16 px-5 pb-2 pt-5 rounded-sm text-lg placeholder-transparent outline-0 pointer border-b-2 border-gray-500"
-                />
-                <label
-                    for="emailRegister"
-                    class="peer-placeholder-shown:top-6 peer-placeholder-shown:left-5 peer-placeholder-shown:text-base text-sm peer-placeholder-shown:text-gray-400 text-black pointer-events-none absolute left-3 top-0 transition-all"
-                >Enter email address</label
-                >
-            </div>
-            <div class="relative mt-3">
-                <input
-                    type="password"
-                    id="passwordRegister"
-                    placeholder="Enter your password"
-                    class="peer w-full h-16 px-5 pb-2 pt-5 rounded-sm text-lg placeholder-transparent outline-0 pointer border-b-2 border-gray-500"
-                />
-                <label
-                    for="passwordRegister"
-                    class="peer-placeholder-shown:top-6 peer-placeholder-shown:left-5 peer-placeholder-shown:text-base text-sm peer-placeholder-shown:text-gray-400 text-black pointer-events-none absolute left-3 top-0 transition-all"
-                >Enter your password</label
-                >
-            </div>
-            <div class="relative mt-3">
-                <input
-                    type="password"
-                    id="passwordSubmitRegister"
-                    placeholder="Submit your password"
-                    class="peer w-full h-16 px-5 pb-2 pt-5 rounded-sm text-lg placeholder-transparent outline-0 pointer border-b-2 border-gray-500"
-                />
-                <label
-                    for="passwordSubmitRegister"
-                    class="peer-placeholder-shown:top-6 peer-placeholder-shown:left-5 peer-placeholder-shown:text-base text-sm peer-placeholder-shown:text-gray-400 text-black pointer-events-none absolute left-3 top-0 transition-all"
-                >Submit your password</label
-                >
-            </div>
-            <input
-                type="button"
-                id="registerButton"
-                value="Submit"
-                class="w-full mt-8 h-16 bg-blue-400 shadow-xl text-white rounded-xl text-lg tracking-wider hover:shadow-2xl hover:bg-blue-600 hover:cursor-pointer duration-100"
-            />
+            </form>
         </div>
     </div>
 </div>
@@ -214,6 +217,15 @@
                         class="absolute top-16 group w-56 hidden -h-64 border-2 border-black rounded-lg bg-white shadow-2xl px-6 py-2 flex-col space-y-2 divide-y divide-blue-400 text-center text-xl font-semibold"
                         id="account"
                     >
+                        @if(Auth::check(0))
+                            <p
+                                class="hover:translate-x-0.5 transition"
+                                onclick="logout()"
+                                id="logOut"
+                            >
+                                Log out
+                            </p>
+                        @else
                         <p
                             class="hover:translate-x-0.5 transition"
                             onclick="showSignInContainer()"
@@ -221,6 +233,7 @@
                         >
                             Sign in
                         </p>
+                        @endif
                         <p class="hover:translate-x-0.5 transition">Shopping cart</p>
                         <p class="hover:translate-x-0.5 transition">Account settings</p>
                         <p class="hover:translate-x-0.5 transition">My Orders</p>
