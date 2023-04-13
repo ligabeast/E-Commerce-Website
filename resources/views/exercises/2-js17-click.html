@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function change(e){
+        if(e.style.backgroundColor == 'red'){
+            e.style.backgroundColor = 'yellow';
+        }
+        else{
+            e.style.backgroundColor = 'red';
+        }
+    }
+</script>
+
+<input type="button" onclick="change(this)" style="background-color: red; height: 500px; width: 500px;">
+
+</body>
+</html>
