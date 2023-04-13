@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--
+Nr2)
+Recherche und Effizienzsteigerung. Entdecken Sie drei neue, für Sie sinnvolle
+Features in der von Ihnen eingesetzten IDE. Benennen und beschreiben Sie jedes
+Feature kurz. Beschreiben Sie, wie Sie dadurch Arbeitszeiten einsparen oder
+Ergebnisse in höherer Qualität erzielen.
+
+Lösung:
+->
+-diagrams -> Markiere mehrere Dokumente und gehe im Kontextmenü auf "Show Diagram".
+             Dann generiert PHP ein UML-Klassendiagramm.
+             Somit kann man die Abhängigkeiten schneller visualisieren und eventuelle Fehler erkennen.
+
+-git      -> PHP-Storm bietet eine eingebaute Versionskontrolle an, mit git.
+             Dadurch kann man die Qualität als auch die Effizienz massiv steigern.
+
+-Code with me -> Plugin für die parallele Arbeit, am gleichem Project.
+
+
+
+Nr3)
+Browserunterstützung. In der Vorlesung haben wir erfahren, dass nicht alle
+Webbrowser alle Features in JavaScript unterstützten. Recherchieren Sie die
+Verbreitung von Webbrowsern:
+a) Welcher wird am meisten auf Desktops und auf mobilen Geräten eingesetzt?
+Chrome
+
+b) Worauf achten Sie bei der Auswahl Ihrer Quelle?
+Welche Version der Webbrowser unterstützen muss, damit der Script ohne Fehler läuft.
+
+c) Welcher Webbrowser unterstützt welche Version von JavaScript?
+Browser vendors don't implement specific versions, but specific features.
+Almost every modern browser is still missing features from ES2017-ES2020
+
+d) Für welche Webbrowser würden Sie Abalo umsetzen? Nennen Sie Ihre Top3 Webbrowser mit einer kurzen Begründung.
+Chrome, Firefox und Safari, da dort das meiste Javascript unterstützt wird.
+
+
+Nr4)
+Javascript vs C++
+
+->Gemeinsamkeiten
+1. Binding at compile/run time (static/dynmaic)
+2. Programmierparadigmen : funktional, oo, prozedural
+3. Kommentare
+4. syntax, größtenteils
+5. Client side and Server side used
+6.
+
+->Unterschiede
+1. dynamisch typisierte variablen
+2. Hoisting -> Bei C++ wird kein Hoisting gemacht (by standard compiler settings)
+3. c++ wird compiliert. javascript wird interpretiert, außer beim
+   V8 engine, dort wird eine "Just in Time compilation" durchgeführt.
+   Ähnlich zu einem Compiler, nur das der Maschinencode niergendwo zwischengespeichert wird.
+   Nach dem Compilieren wird es sofort ausgeführt!
+4. Funktionsparameter, zb kann man mehr parameter mitgeben als in der Funktions definitions angegeben wurden.
+5. c++ is a mid level language, where javascript is a high level language
+6.
+
+-->
+
+<!-- nr 5 -->
+<script>
+    'use strict'
+    const data = {
+        'produkte': [
+            { name: 'Ritterburg', preis: 59.99, kategorie: 1, anzahl: 3 },
+            { name: 'Gartenschlau 10m', preis: 6.50, kategorie: 2, anzahl: 5 },
+            { name: 'Robomaster' ,preis: 199.99, kategorie: 1, anzahl: 2 },
+            { name: 'Pool 250x400', preis: 250, kategorie: 2, anzahl: 8 },
+            { name: 'Rasenmähroboter', preis: 380.95, kategorie: 2, anzahl: 4 },
+            { name: 'Prinzessinnenschloss', preis: 59.99, kategorie: 1, anzahl: 5 }
+        ],
+        'kategorien': [
+            { id: 1, name: 'Spielzeug' },
+            { id: 2, name: 'Garten' }
+        ]
+    };
+
+    /*a)  getMaxPreis, die als Parameter die Daten erhält und den Namen des ersten Produkts mit dem
+          höchsten Preis zurückgibt. */
+    function getMaxPreis(data){
+        if(data.produkte.length > 0)
+            return data.produkte.reduce((acc, item) => (item.preis > acc.preis) ? item : acc, data.produkte[0]).preis;
+        else
+            return undefined
+    }
+    console.log(getMaxPreis(data));
+
+    /*b)  getMinPreisProdukt, die als Parameter die Daten erhält und die vollständigen
+          Produktdaten (das Objekt) des ersten Produkts mit dem niedrigsten Preis
+          zurückgibt. */
+
+    function getMinPreisProdukt(data){
+        if(data.produkte.length > 0)
+            return data.produkte.reduce((acc, item) => (item.preis < acc.preis) ? item : acc, data.produkte[0]);
+        else
+            return undefined
+    }
+    console.log(getMinPreisProdukt(data));
+
+    /*c)  getPreisSum, die als Parameter die Daten erhält und die Gesamtsumme aller
+          Produkte berechnet und zurückgibt. */
+
+    function getPreisSum(data){
+        if(data.produkte.length > 0)
+            return data.produkte.reduce((acc,item) => acc+item.preis, 0);
+        else
+            return undefined
+    }
+    console.log(getPreisSum(data));
+
+    /*d)  getGesamtWert, die als Parameter die Daten erhält und die den Gesamtwert
+          aller Produkte berechnet und zurückgibt. Der Gesamtwert eines Produkts
+          berechnet sich aus Preis * Anzahl. */
+
+    function getGesamtWert(data){
+        if(data.produkte.length > 0)
+            return data.produkte.reduce((acc,item) => acc+(item.preis * item.anzahl), 0);
+        else
+            return undefined
+    }
+    console.log(getGesamtWert(data));
+
+    /*e)  getAnzahlProdukteOfKategorie, die als Parameter die Daten sowie einen
+          Kategorienamen erhält und die Gesamtanzahl aller Produkte
+          dieser Kategorie berechnet und zurückgibt. */
+
+    function getAnzahlProdukteOfKategorie(data, category){
+        if(data.produkte.length > 0)
+            return data.produkte.filter((item) => (item.kategorie === category)).length
+        else
+            return undefined
+    }
+    console.log(getAnzahlProdukteOfKategorie(data, 1));
+</script>
+
+
+
+</body>
+</html>

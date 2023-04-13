@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    if(!document.cookie.includes('counter')){
+        document.cookie = (document.cookie + 'counter=0;');
+    }
+    else{
+        const arr = document.cookie.split(/(=|;)/g);
+        console.log(arr);
+        const index = arr.indexOf('counter');
+        console.log(index);
+        arr[index+2] = String(Number(arr[index+2]) + 1);
+        console.log(arr[index+2]);
+        document.cookie = arr.join('');
+    }
+    console.log(document.cookie)
+
+
+</script>
+
+</body>
+</html>

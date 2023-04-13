@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    const form = document.createElement('form');
+    const submit = document.createElement('input');
+    submit.type='Submit';
+    const inputText = document.createElement('input');
+    inputText.type = 'text';
+    const inputDropdown = document.createElement('select');
+    const option1 = document.createElement('option');
+    const option2 = document.createElement('option');
+    option1.innerText = 'option1';
+    option2.innerText = 'option2';
+    option2.selected = true;
+
+    inputDropdown.add(option1);
+    inputDropdown.add(option2);
+
+    document.body.appendChild(form);
+    form.appendChild(inputText);
+    form.appendChild(inputDropdown);
+    form.appendChild(submit);
+
+
+</script>
+
+
+</body>
+</html>

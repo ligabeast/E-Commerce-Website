@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    const surface = document.createElement('div');
+    surface.style.backgroundColor = 'Black';
+    surface.style.height = '100px';
+    surface.style.width = '100px';
+    surface.style.position = 'relative';
+
+    const label = document.createElement('p');
+    label.style.position = 'absolute';
+    label.style.bottom = '0px';
+    label.style.left = '33%';
+    label.textContent = 'Test';
+    label.style.color = 'white';
+
+    surface.appendChild(label);
+
+    document.body.appendChild(surface);
+
+
+</script>
+</body>
+</html>

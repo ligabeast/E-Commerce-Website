@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    const car1 = new Object();
+    car1.name = "audi";
+    car1.type = 'coupe';
+    car1.setName = function Obj_setName(name) {this.name = name;}
+    car1.setType = function Obj_setType(type) {this.type = type;}
+    car1.getName = function Obj_getName(name) {return this.name;}
+    car1.getType = function Obj_getType(type) {return this.type;}
+    car1.writeToConsole = function output() {console.log("Type: ", this.type, " Name: ", this.name);} ;
+
+    car1.writeToConsole();
+    console.log(car1);
+
+    const json = JSON.stringify(car1, function(key, val) {
+        if (typeof val === 'function') {
+            return "/Function(" + val.toString() + ")/";
+        }
+        return val;
+    });
+
+    //Executing Javascript like this is not recommended
+    var car2 = JSON.parse(json, function(key, value) {
+        if (typeof value === "string" &&
+            value.startsWith("/Function(") &&
+            value.endsWith(")/")) {
+            value = value.substring(10, value.length - 2);
+            return eval("(" + value + ")");
+        }
+        return value;
+    });
+    car2.writeToConsole();
+    console.log(car2);
+
+    const car3 = {
+        name : "audi",
+        type : 'coupe',
+        setName : function Obj_setName(name) { this.name = name; },
+        setType : function Obj_setType(type) { this.type = type; },
+        getName : function Obj_getName(name) { return this.name; },
+        getType : function Obj_getType(type) { return this.type; },
+        writeToConsole : function output() { console.log("Type: ", this.type, " Name: ", this.name); }
+    }
+    car3.writeToConsole();
+    console.log(car3);
+
+
+</script>
+
+</body>
+</html>
