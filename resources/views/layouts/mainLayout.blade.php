@@ -278,16 +278,17 @@
         class="h-60 bg-blue-950 flex flex-col item-center justify-center text-white space-y-5"
     >
         <div class="flex flex-row items-center justify-center space-x-5">
-            <a class="hover:font-semibold hover:cursor-pointer hover:text-lg"
+            <a class="hover:font-semibold hover:cursor-pointer"
             >Unsere AGB</a
             >
-            <a class="hover:font-semibold hover:cursor-pointer hover:text-lg"
+            <a class="hover:font-semibold hover:cursor-pointer"
             >Datenschutzerklärung</a
             >
-            <a class="hover:font-semibold hover:cursor-pointer hover:text-lg"
+            <a class="hover:font-semibold hover:cursor-pointer"
             >Impressum</a
             >
-            <a class="hover:font-semibold hover:cursor-pointer hover:text-lg"
+            <a class="hover:font-semibold hover:cursor-pointer"
+               href="/cookies"
             >Hinweise zu Cookies</a
             >
         </div>

@@ -15,6 +15,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [indexController::class, 'index'])->name('homepage');
+Route::get('/cookies', [indexController::class, 'cookies']);
+
+
 Route::post('/login', [\App\Http\Controllers\AuthenticationController::class, 'login']);
 Route::get('/login/google-account', [\App\Http\Controllers\AuthenticationController::class, 'loginGoogle']);
 Route::get('/login/google-account/callback', [\App\Http\Controllers\AuthenticationController::class, 'loginGoogleCallback']);
