@@ -261,12 +261,12 @@ registerButton.addEventListener('click',(e) => {
                 .then(res => res.json())
                 .then(res => {
                     console.log(res);
-                   if(res.successful){
+                    if(res.successful){
                         hideRegisterContainer();
                         document.body.appendChild(successfulLRegistered);
-                   }else{
-                       showErrorMessage();
-                   }
+                    }else{
+                        showErrorMessage();
+                    }
                 });
         }
     }
@@ -274,7 +274,32 @@ registerButton.addEventListener('click',(e) => {
 });
 
 function showErrorMessage(){
-alert("FALSE");
+    alert("FALSE");
 }
 
+const swiperHintergrund = new Swiper(".swiperHintergrund", {
+    // Optional parameters
+    direction: "horizontal",
+    loop: true,
+    allowTouchMove: false,
+
+    autoplay: {
+        delay: 5000,
+    },
+});
+
+const swiper = new Swiper(".swiper", {
+    // Optional parameters
+    direction: "horizontal",
+    loop: true,
+
+    pagination: {
+        el: ".swiper-pagination",
+    },
+    // Navigation arrows
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
+});
 

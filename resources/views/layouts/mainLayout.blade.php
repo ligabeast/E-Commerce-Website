@@ -13,6 +13,10 @@
         rel="stylesheet"
     />
     <!----->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+    />
     <link rel="icon" type="image" href="{{asset('images/TitleIcon.jpg')}}" />
     <title>Abalo Hauptseite</title>
 </head>
@@ -32,12 +36,12 @@
 
 <div class="hidden" id="signInContainer">
     <div
-        class="fixed inset-0 bg-black opacity-30 justify-center items-center"
+        class="fixed z-50 inset-0 bg-black opacity-30 justify-center items-center"
         id="signInBackground"
     ></div>
     <div
         id="signInWindow"
-        class="fixed inset-0 m-auto max-w-md h-fit bg-white py-4 px-8 rounded-md shadow-xl"
+        class="fixed z-50 inset-0 m-auto max-w-md h-fit bg-white py-4 px-8 rounded-md shadow-xl"
     >
         <form id="signInForm">
             <div class="flex relative flex-col py-4">
@@ -116,12 +120,12 @@
 
 <div class="hidden" id="registerContainer">
     <div
-        class="fixed inset-0 bg-black opacity-30 justify-center items-center"
+        class="fixed inset-0 z-50 bg-black opacity-30 justify-center items-center"
         id="registerBackground"
     ></div>
     <div
         id="registerWindow"
-        class="fixed inset-0 m-auto max-w-md h-fit bg-white py-4 px-8 rounded-md shadow-xl"
+        class="fixed inset-0 z-50 m-auto max-w-md h-fit bg-white py-4 px-8 rounded-md shadow-xl"
     >
         <div class="flex relative flex-col py-4">
             <p class="text-2xl font-semibold text-center py-6">Register</p>
@@ -138,65 +142,65 @@
                         class="peer-placeholder-shown:top-6 peer-placeholder-shown:left-5 peer-placeholder-shown:text-base text-sm peer-placeholder-shown:text-gray-400 text-black pointer-events-none absolute left-3 top-0 transition-all"
                     >Enter your fullname</label
                     >
-                </div>
-                <div class="relative mt-3">
-                    <input
-                        type="email"
-                        id="emailRegister"
-                        placeholder="Enter email address"
-                        class="peer w-full h-16 px-5 pb-2 pt-5 rounded-sm text-lg placeholder-transparent outline-0 pointer border-b-2 border-gray-500"
-                    />
-                    <label
-                        for="emailRegister"
-                        class="peer-placeholder-shown:top-6 peer-placeholder-shown:left-5 peer-placeholder-shown:text-base text-sm peer-placeholder-shown:text-gray-400 text-black pointer-events-none absolute left-3 top-0 transition-all"
-                    >Enter email address</label
-                    >
-                </div>
-                <div class="relative mt-3">
-                    <input
-                        type="password"
-                        id="passwordRegister"
-                        placeholder="Enter your password"
-                        class="peer w-full h-16 px-5 pb-2 pt-5 rounded-sm text-lg placeholder-transparent outline-0 pointer border-b-2 border-gray-500"
-                    />
-                    <label
-                        for="passwordRegister"
-                        class="peer-placeholder-shown:top-6 peer-placeholder-shown:left-5 peer-placeholder-shown:text-base text-sm peer-placeholder-shown:text-gray-400 text-black pointer-events-none absolute left-3 top-0 transition-all"
-                    >Enter your password</label
-                    >
-                </div>
-                <div class="relative mt-3">
-                    <input
-                        type="password"
-                        id="passwordSubmitRegister"
-                        placeholder="Submit your password"
-                        class="peer w-full h-16 px-5 pb-2 pt-5 rounded-sm text-lg placeholder-transparent outline-0 pointer border-b-2 border-gray-500"
-                    />
-                    <label
-                        for="passwordSubmitRegister"
-                        class="peer-placeholder-shown:top-6 peer-placeholder-shown:left-5 peer-placeholder-shown:text-base text-sm peer-placeholder-shown:text-gray-400 text-black pointer-events-none absolute left-3 top-0 transition-all"
-                    >Submit your password</label
-                    >
-                </div>
+            </div>
+            <div class="relative mt-3">
                 <input
-                    type="submit"
-                    id="registerButton"
-                    value="Submit"
-                    class="w-full mt-8 h-16 bg-blue-400 shadow-xl text-white rounded-xl text-lg tracking-wider hover:shadow-2xl hover:bg-blue-600 hover:cursor-pointer duration-100"
+                    type="email"
+                    id="emailRegister"
+                    placeholder="Enter email address"
+                    class="peer w-full h-16 px-5 pb-2 pt-5 rounded-sm text-lg placeholder-transparent outline-0 pointer border-b-2 border-gray-500"
                 />
+                <label
+                    for="emailRegister"
+                    class="peer-placeholder-shown:top-6 peer-placeholder-shown:left-5 peer-placeholder-shown:text-base text-sm peer-placeholder-shown:text-gray-400 text-black pointer-events-none absolute left-3 top-0 transition-all"
+                >Enter email address</label
+                >
+            </div>
+            <div class="relative mt-3">
+                <input
+                    type="password"
+                    id="passwordRegister"
+                    placeholder="Enter your password"
+                    class="peer w-full h-16 px-5 pb-2 pt-5 rounded-sm text-lg placeholder-transparent outline-0 pointer border-b-2 border-gray-500"
+                />
+                <label
+                    for="passwordRegister"
+                    class="peer-placeholder-shown:top-6 peer-placeholder-shown:left-5 peer-placeholder-shown:text-base text-sm peer-placeholder-shown:text-gray-400 text-black pointer-events-none absolute left-3 top-0 transition-all"
+                >Enter your password</label
+                >
+            </div>
+            <div class="relative mt-3">
+                <input
+                    type="password"
+                    id="passwordSubmitRegister"
+                    placeholder="Submit your password"
+                    class="peer w-full h-16 px-5 pb-2 pt-5 rounded-sm text-lg placeholder-transparent outline-0 pointer border-b-2 border-gray-500"
+                />
+                <label
+                    for="passwordSubmitRegister"
+                    class="peer-placeholder-shown:top-6 peer-placeholder-shown:left-5 peer-placeholder-shown:text-base text-sm peer-placeholder-shown:text-gray-400 text-black pointer-events-none absolute left-3 top-0 transition-all"
+                >Submit your password</label
+                >
+            </div>
+            <input
+                type="submit"
+                id="registerButton"
+                value="Submit"
+                class="w-full mt-8 h-16 bg-blue-400 shadow-xl text-white rounded-xl text-lg tracking-wider hover:shadow-2xl hover:bg-blue-600 hover:cursor-pointer duration-100"
+            />
             </form>
         </div>
     </div>
 </div>
 
-<div class="flex flex-col w-screen h-screen">
+<div class="flex flex-col w-full h-full">
     <head class="h-48 flex flex-col justify-center items-center">
         <div class="flex-col flex items-center justify-center md:flex-row">
             <div class="flex flex-row mx-4">
                 <a href ="/">
                     <img
-                    class="mx-auto my-2 wx-auto hover:cursor-pointer inline hover:scale-105 transition"
-                    src="{{asset('images/Logo.png')}}" />
+                        class="mx-auto my-2 wx-auto hover:cursor-pointer inline hover:scale-105 transition"
+                        src="{{asset('images/Logo.png')}}" />
                 </a>
                 <div
                     class="mx-3 space-x-2 flex justify-center items-center hover:cursor-pointer group relative"
@@ -214,7 +218,7 @@
                         <span class="accountButtonLabel" id="accountButton">@if(Auth::check()) {{Auth::user()->name}} @else Account @endif</span>
                     </button>
                     <div
-                        class="absolute top-16 group w-56 hidden -h-64 border-2 border-black rounded-lg bg-white shadow-2xl px-6 py-2 flex-col space-y-2 divide-y divide-blue-400 text-center text-xl font-semibold"
+                        class="absolute top-16 z-50 group w-56 hidden -h-64 border-2 border-black rounded-lg bg-white shadow-2xl px-6 py-2 flex-col space-y-2 divide-y divide-blue-400 text-center text-xl font-semibold"
                         id="account"
                     >
                         @if(Auth::check(0))
@@ -226,13 +230,13 @@
                                 Log out
                             </p>
                         @else
-                        <p
-                            class="hover:translate-x-0.5 transition"
-                            onclick="showSignInContainer()"
-                            id="signInLabel"
-                        >
-                            Sign in
-                        </p>
+                            <p
+                                class="hover:translate-x-0.5 transition"
+                                onclick="showSignInContainer()"
+                                id="signInLabel"
+                            >
+                                Sign in
+                            </p>
                         @endif
                         <p class="hover:translate-x-0.5 transition">Shopping cart</p>
                         <p class="hover:translate-x-0.5 transition">Account settings</p>
@@ -267,12 +271,8 @@
             </div>
         </div>
     </head>
-    <main class="h-full bg-white">
-        @yield('one')
-        @yield('two')
-        @yield('three')
-        @yield('four')
-        @yield('five')
+    <main class="overflow-x-hidden">
+        @yield('content')
     </main>
     <footer
         class="h-60 bg-blue-950 flex flex-col item-center justify-center text-white space-y-5"
@@ -296,6 +296,7 @@
         </p>
     </footer>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 <script src="{{asset('scripts/script.js')}}"></script>
 </body>
 </html>
