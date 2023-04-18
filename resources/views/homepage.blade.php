@@ -554,4 +554,6 @@
             </a>
         </div>
     </div>
+    <script src="{{asset('scripts/homepage.js')}}"></script>
+    <!--<script src="{{asset('scripts/temp.js')}}"></script>-->
 @endsection

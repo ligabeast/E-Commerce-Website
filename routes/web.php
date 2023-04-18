@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\IndexController;
 use Illuminate\Support\Facades\Route;
+use \App\Http\Controllers\ShoppingCart;
+use \App\Http\Controllers\AuthenticationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,13 +17,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [indexController::class, 'index'])->name('homepage');
-Route::get('/cookies', [indexController::class, 'cookies']);
+Route::get('/cookies', [AuthenticationController::class, 'cookies']);
+Route::get('/shoppingCart', [ShoppingCart::class, 'index']);
 
 
-Route::post('/login', [\App\Http\Controllers\AuthenticationController::class, 'login']);
-Route::get('/login/google-account', [\App\Http\Controllers\AuthenticationController::class, 'loginGoogle']);
-Route::get('/login/google-account/callback', [\App\Http\Controllers\AuthenticationController::class, 'loginGoogleCallback']);
-Route::get('/login/facebook-account', [\App\Http\Controllers\AuthenticationController::class, 'loginFacebook']);
-Route::get('/login/facebook-account/callback', [\App\Http\Controllers\AuthenticationController::class, 'loginFacebookCallback']);
-Route::get('/logout', [\App\Http\Controllers\AuthenticationController::class, 'logout']);
-Route::post('/register', [\App\Http\Controllers\AuthenticationController::class, 'register']);
+
+Route::post('/login', [AuthenticationController::class, 'login']);
+Route::get('/login/google-account', [AuthenticationController::class, 'loginGoogle']);
+Route::get('/login/google-account/callback', [AuthenticationController::class, 'loginGoogleCallback']);
+Route::get('/login/facebook-account', [AuthenticationController::class, 'loginFacebook']);
+Route::get('/login/facebook-account/callback', [AuthenticationController::class, 'loginFacebookCallback']);
+Route::get('/logout', [AuthenticationController::class, 'logout']);
+Route::post('/register', [AuthenticationController::class, 'register']);

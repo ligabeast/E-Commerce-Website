@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
+
     <!--Font-->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -13,10 +14,13 @@
         rel="stylesheet"
     />
     <!----->
+    <!--Swiper.js-->
     <link
         rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
     />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <!----->
     <link rel="icon" type="image" href="{{asset('images/TitleIcon.jpg')}}" />
     <title>Abalo Hauptseite</title>
 </head>
@@ -195,21 +199,6 @@
     </div>
 </div>
 
-<div class="bg-slate-800 hidden border-4 flex-col border-blue-500 rounded-xl z-50 bottom-2 right-2 flex p-5 fixed h-72 w-96">
-    <p class=" text-white text-semibold text-center">Wir verwenden <a href="https://de.wikipedia.org/wiki/HTTP-Cookie" target="_blank"   class="underline hover:cursor-pointer text-lg text-blue-500">Cookies</a>, um Inhalte und Anzeigen zu personalisieren, Funktionen für soziale Medien anbieten zu können und die Zugriffe auf unsere Website zu analysieren. Außerdem geben wir Informationen zu Ihrer Verwendung unserer Website an unsere Partner.</p>
-    <div class="flex justify-between space-x-5 h-full w-full py-2">
-        <a href="/cookies" class="w-full flex justify-center overflow-hidden items-center group hover:cursor-pointer text-white relative bg-slate-800 rounded-xl border-2 border-blue-500">
-            <span class="w-0 h-full absolute left-0 duration-1000 group-hover:w-full bg-blue-600 transition-all ease-out z-30"></span>
-            <span class="z-40">Mehr erfahren</span>
-        </a>
-        <a class="w-full flex justify-center overflow-hidden items-center group hover:cursor-pointer text-white relative bg-green-600 rounded-xl border-2 border-whites">
-            <span class="w-0 h-full absolute left-0 duration-1000 group-hover:w-full bg-green-700 transition-all ease-out z-30"></span>
-            <span class="z-40">Einwilligen</span>
-            <img class="inline w-6 group-hover:scale-150 transition-all z-40 mx-2 group-hover:rotate-180" src="{{asset('images/cookie2.png')}}">
-        </a>
-    </div>
-</div>
-
 <div class="flex flex-col w-full h-full">
     <head class="h-48 flex flex-col justify-center items-center">
         <div class="flex-col flex items-center justify-center md:flex-row">
@@ -255,7 +244,7 @@
                                 Sign in
                             </p>
                         @endif
-                        <p class="hover:translate-x-0.5 transition">Shopping cart</p>
+                        <a href="/shoppingCart" class="hover:translate-x-0.5 transition">Shopping cart</a>
                         <p class="hover:translate-x-0.5 transition">Account settings</p>
                         <p class="hover:translate-x-0.5 transition">My Orders</p>
                         <p class="hover:translate-x-0.5 transition">Observation list</p>
@@ -314,7 +303,6 @@
         </p>
     </footer>
 </div>
-<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-<script src="{{asset('scripts/script.js')}}"></script>
+<script src="{{asset('scripts/mainlayout.js')}}"></script>
 </body>
 </html>

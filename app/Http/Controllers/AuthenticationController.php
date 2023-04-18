@@ -90,4 +90,8 @@ class AuthenticationController extends Controller
             return response()->json(['successful' => true]);
         }
     }
+    function disableSession(Request $rd){
+
+    }
+
 }
