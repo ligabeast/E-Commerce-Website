@@ -277,7 +277,7 @@
             </div>
         </div>
     </head>
-    <main class="overflow-x-hidden">
+    <main class="overflow-x-hidden min-h-screen">
         @yield('content')
     </main>
     <footer

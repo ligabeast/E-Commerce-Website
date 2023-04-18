@@ -17,7 +17,7 @@ use \App\Http\Controllers\AuthenticationController;
 */
 
 Route::get('/', [indexController::class, 'index'])->name('homepage');
-Route::get('/cookies', [AuthenticationController::class, 'cookies']);
+Route::get('/cookies', [IndexController::class, 'cookies']);
 Route::get('/shoppingCart', [ShoppingCartController::class, 'index']);
 
 
