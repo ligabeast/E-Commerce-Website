@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\IndexController;
 use Illuminate\Support\Facades\Route;
-use \App\Http\Controllers\ShoppingCart;
+use \App\Http\Controllers\ShoppingCartController;
 use \App\Http\Controllers\AuthenticationController;
 
 /*
@@ -18,7 +18,7 @@ use \App\Http\Controllers\AuthenticationController;
 
 Route::get('/', [indexController::class, 'index'])->name('homepage');
 Route::get('/cookies', [AuthenticationController::class, 'cookies']);
-Route::get('/shoppingCart', [ShoppingCart::class, 'index']);
+Route::get('/shoppingCart', [ShoppingCartController::class, 'index']);
 
 
 
