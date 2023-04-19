@@ -21,6 +21,7 @@ Route::get('/cookies', [IndexController::class, 'cookies']);
 Route::get('/shoppingCart', [ShoppingCartController::class, 'index']);
 Route::get('/sell', [SellController::class, 'index']);
 Route::get('/sell/set_article', [SellController::class, 'listArticleToSell']);
+Route::get('/sell/set_article/category', [SellController::class, 'listArticleInCategory']);
 
 
 

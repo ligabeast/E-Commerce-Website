@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ArticleCategory;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 
@@ -12,6 +13,14 @@ class SellController extends Controller
     }
 
     function listArticleToSell(Request $rd){
-        return view('listItem');
+        $categorys = ArticleCategory::all('name');
+        return view('listItemCategory',compact('categorys'));
+    }
+
+    function listArticleInCategory(Request $rd){
+        if(ArticleCategory::where('name','=',$rd->category)->first()) { //exists
+            return view('listItem');
+        }
+        return view('listItemNotFound');
     }
 }
