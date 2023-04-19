@@ -1,3 +1,4 @@
+'use strict'
 const allItemSelection = document.querySelectorAll('.priceCheckbox');
 const allRemoveButtons = document.querySelectorAll('.removeItem');
 const balanceSumLabel = document.querySelector('#sumBalanceLabel');

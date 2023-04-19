@@ -4,7 +4,7 @@ use App\Http\Controllers\IndexController;
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\ShoppingCartController;
 use \App\Http\Controllers\AuthenticationController;
-
+use \App\Http\Controllers\SellController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,6 +19,9 @@ use \App\Http\Controllers\AuthenticationController;
 Route::get('/', [indexController::class, 'index'])->name('homepage');
 Route::get('/cookies', [IndexController::class, 'cookies']);
 Route::get('/shoppingCart', [ShoppingCartController::class, 'index']);
+Route::get('/sell', [SellController::class, 'index']);
+Route::get('/sell/set_article', [SellController::class, 'listArticleToSell']);
+
 
 
 

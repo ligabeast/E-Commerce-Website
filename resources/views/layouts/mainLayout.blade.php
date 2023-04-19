@@ -7,12 +7,12 @@
     <script src="https://cdn.tailwindcss.com"></script>
 
     <!--Font-->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;600&display=swap"
-        rel="stylesheet"
-    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        *{ font-family: 'Bai Jamjuree', sans-serif; }
+    </style>
     <!----->
     <!--Swiper.js-->
     <link
@@ -199,7 +199,7 @@
     </div>
 </div>
 
-<div class="flex flex-col w-full h-full">
+<div class="flex flex-col w-full h-full font-sans">
     <head class="h-48 flex flex-col justify-center items-center">
         <div class="flex-col flex items-center justify-center md:flex-row">
             <div class="flex flex-row mx-4">
@@ -233,7 +233,7 @@
                                 onclick="logout()"
                                 id="logOut"
                             >
-                                Log out
+                                Abmelden
                             </p>
                         @else
                             <p
@@ -241,14 +241,15 @@
                                 onclick="showSignInContainer()"
                                 id="signInLabel"
                             >
-                                Sign in
+                                Anmelden
                             </p>
                         @endif
-                        <a href="/shoppingCart" class="hover:translate-x-0.5 transition">Shopping cart</a>
-                        <p class="hover:translate-x-0.5 transition">Account settings</p>
-                        <p class="hover:translate-x-0.5 transition">My Orders</p>
-                        <p class="hover:translate-x-0.5 transition">Observation list</p>
-                        <p class="hover:translate-x-0.5 transition">Messages</p>
+                        <a href="/shoppingCart" class="hover:translate-x-0.5 transition">Warenkorb</a>
+                        <p class="hover:translate-x-0.5 transition">Account Einstellungen</p>
+                        <p class="hover:translate-x-0.5 transition">Meine Käufe</p>
+                        <a href="sell" class="hover:translate-x-0.5 transition">Meine Verkäufe</a>
+                        <p class="hover:translate-x-0.5 transition">Beobachtungsliste</p>
+                        <p class="hover:translate-x-0.5 transition">Nachrichten</p>
                     </div>
                 </div>
             </div>
@@ -260,7 +261,7 @@
                 />
                 <div class="my-2 flex justify-center space-x-3">
                     <select class="outline-0 h-full text-lg hover:cursor-pointer">
-                        <option selected disabled>Category</option>
+                        <option selected disabled>Kategorie</option>
                         <option>Elektro</option>
                         <option>Haushalt</option>
                         <option>Kleidung</option>
@@ -271,7 +272,7 @@
                     <input
                         type="button"
                         class="bg-blue-400 h-12 px-4 rounded-sm text-white tracking-wider hover:bg-blue-700 transition hover:cursor-pointer hover:-translate-y-0.5 hover:shadow-lg"
-                        value="Search"
+                        value="Suchen"
                     />
                 </div>
             </div>

@@ -1,3 +1,4 @@
+'use strict'
 let displayingAccountOptions = false;
 const accountOptions = document.getElementById("account");
 const accountButton = document.getElementById("accountButton");

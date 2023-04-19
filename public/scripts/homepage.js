@@ -1,4 +1,4 @@
-
+'use strict'
 const swiperHintergrund = new Swiper(".swiperHintergrund", {
     // Optional parameters
     direction: "horizontal",
