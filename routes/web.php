@@ -25,8 +25,6 @@ Route::get('/sell/set_article/category', [SellController::class, 'listArticleInC
 Route::post('/sell/set_article/list', [SellController::class, 'postArticle']);
 
 
-
-
 Route::post('/login', [AuthenticationController::class, 'login']);
 Route::get('/login/google-account', [AuthenticationController::class, 'loginGoogle']);
 Route::get('/login/google-account/callback', [AuthenticationController::class, 'loginGoogleCallback']);

@@ -1,0 +1,86 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<div id="navbar"></div>
+
+
+<script type="text/javascript">
+    const ul = document.createElement("ul");
+    const home = document.createElement("li");
+    const category = document.createElement("li");
+    const sell = document.createElement("li");
+    const company = document.createElement("li");
+    const philosophy = document.createElement("li");
+    const career = document.createElement("li");
+    const subUl = document.createElement("ul");
+
+    const aHome = document.createElement("a");
+    aHome.href = "/";
+    aHome.textContent = "Home";
+
+    const aCategory = document.createElement("a");
+    aCategory.href = "/articles";
+    aCategory.textContent = "Kategorien";
+
+    const aSell = document.createElement("a");
+    aSell.href = "/";
+    aSell.textContent = "Verkaufen";
+
+    const aCompany = document.createElement("a");
+    aCompany.href = "#";
+    aCompany.textContent = "Unternehmen";
+
+    const aPhilosophy = document.createElement("a");
+    aPhilosophy.href = "/2";
+    aPhilosophy.textContent = "Philosophie";
+    aPhilosophy.style.display = "hidden"
+
+
+    const aCareer = document.createElement("a");
+    aCareer.href = "/3";
+    aCareer.textContent = "Karriere";
+    aCareer.style.display = "hidden"
+    subUl.style.display = "hidden"
+
+    home.appendChild(aHome);
+    category.appendChild(aCategory);
+    sell.appendChild(aSell);
+    company.appendChild(aCompany);
+    philosophy.appendChild(aPhilosophy);
+    career.appendChild(aCareer);
+
+    subUl.appendChild(career);
+    subUl.appendChild(philosophy);
+
+    company.appendChild(subUl);
+
+    ul.appendChild(home);
+    ul.appendChild(category);
+    ul.appendChild(sell);
+    ul.appendChild(company);
+
+    document.getElementById("navbar").appendChild(ul);
+
+    ul.style.backgroundColor = "grey";
+
+    subUl.style.display = "none"
+    aCompany.onclick  = function (){
+        if(subUl.style.display === "none"){
+            subUl.style.display = "block"
+        }else{
+            subUl.style.display = "none"
+        }
+    }
+
+</script>
+
+</body>
+</html>
+
