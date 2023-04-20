@@ -2,7 +2,7 @@
 const SearchBar = document.querySelector('#SearchBar');
 const SearchButton = document.querySelector('#SearchButton');
 const Suggestions = document.querySelector('#suggestions');
-const SuggestionOne = '<div onclick="takeAsInput(this)" class="h-12 text-blue-500 font-semibold text-lg hover:cursor-pointer hover:bg-zinc-300 w-full flex items-center justify-center"><span>';
+const SuggestionOne = '<div onclick="takeAsInput(this)" class="h-12 text-blue-500 font-semibold text-lg hover:cursor-pointer hover:bg-zinc-300 w-full flex items-center justify-center"><span class="text-center">';
 const SuggestionTwo = '</span></div>';
 
 SearchBar.addEventListener('keyup',(e) => {
@@ -11,7 +11,7 @@ SearchBar.addEventListener('keyup',(e) => {
         SearchButton.classList.add('bg-blue-500');
         SearchButton.classList.add('hover:bg-blue-700');
     }
-    else if (SearchBar.value){
+    if (SearchBar.value){
         Suggestions.innerHTML = "";
         for (let [i, item] of getCategorys().entries()){
             if(i > 8){
@@ -20,7 +20,7 @@ SearchBar.addEventListener('keyup',(e) => {
             Suggestions.innerHTML += SuggestionOne + item.name + SuggestionTwo;
         }
     }
-    else if(!SearchBar.value){
+    if(!SearchBar.value){
         SearchButton.classList.remove('bg-blue-500');
         SearchButton.classList.remove('hover:bg-blue-700');
         SearchButton.classList.add('bg-zinc-400');

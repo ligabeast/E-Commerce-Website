@@ -65,17 +65,23 @@ successfulLRegistered.innerHTML = "    <svg aria-hidden=\"true\" class=\"flex-sh
     "        <svg aria-hidden=\"true\" class=\"w-5 h-5\" fill=\"currentColor\" viewBox=\"0 0 20 20\" xmlns=\"http://www.w3.org/2000/svg\"><path fill-rule=\"evenodd\" d=\"M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z\" clip-rule=\"evenodd\"></path></svg>\n" +
     "    </button>";
 
-const logInButton = document.createElement('p');
-logInButton.classList.add("hover:translate-x-0.5", "transition");
-logInButton.onclick = showSignInContainer;
-logInButton.id = "signInLabel"
-logInButton.textContent = "Sign in";
+const loggedInOptions = '        <p class="hover:translate-x-0.5 transition"\n onclick="logout()"\n' +
+    '                                id="logOut"\n' +
+    '                            >\n' +
+    '                                Abmelden\n' +
+    '                            </p>'+
+    '                            <a href="http://127.0.0.1:8000/shoppingCart" class="hover:translate-x-0.5 transition">Warenkorb</a>\n' +
+    '                            <p class="hover:translate-x-0.5 transition">Account Einstellungen</p>\n' +
+    '                            <p class="hover:translate-x-0.5 transition">Meine Käufe</p>\n' +
+    '                            <a href="http://127.0.0.1:8000/sell" class="hover:translate-x-0.5 transition">Meine Verkäufe</a>\n' +
+    '                            <p class="hover:translate-x-0.5 transition">Beobachtungsliste</p>\n' +
+    '                            <p class="hover:translate-x-0.5 transition">Nachrichten</p>';
 
 const logOutButton = document.createElement('p');
 logOutButton.classList.add("hover:translate-x-0.5", "transition");
-logOutButton.onclick = logout;
-logOutButton.id = "logOut"
-logOutButton.textContent = "Log out";
+logOutButton.onclick = showSignInContainer;
+logOutButton.id = "signInLabel"
+logOutButton.textContent = "Anmelden";
 
 const incorrectCredentials = document.getElementById('errorMessage');
 const signInForm = document.getElementById('signInForm');
@@ -159,9 +165,7 @@ signInButton.addEventListener('click', (e)=> {
                 console.log(response);
                 if (response.authenticate) {  //successful
                     hideSignInContainer();
-                    document.body.appendChild(successfulLoginDiv);
-                    accountOptions.removeChild(accountOptions.firstElementChild);
-                    accountOptions.insertBefore(logOutButton, accountOptions.firstChild);
+                    accountOptions.innerHTML = loggedInOptions;
                     accountButtonLabel.textContent = response.name
                 } else {                      //not successful
                     showErrorMessageSignIn();
@@ -197,8 +201,8 @@ function logout(){
             if(res.successful){
                 document.body.appendChild(successfulLogoutDiv);
                 accountButtonLabel.textContent = "Account"
-                accountOptions.removeChild(accountOptions.firstElementChild);
-                accountOptions.insertBefore(logInButton, accountOptions.firstChild);
+                accountOptions.innerHTML = "";
+                accountOptions.appendChild(logOutButton);
             }
             else {                      //not successful
                 showErrorMessageSignIn();

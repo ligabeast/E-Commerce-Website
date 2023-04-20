@@ -19,6 +19,7 @@ return new class extends Migration
             $table->bigInteger('creator_id', false, true);
             $table->foreign('creator_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamp('created_at');
+            $table->string('state',50);
         });
     }
 

@@ -21,12 +21,11 @@ class ArticleSeeder extends Seeder
         while ($data = fgetcsv($csvFile, 2000, ";")) {
 
                 Article::create([
-                    "id" => $data['0'],
                     "name" => $data['1'],
                     "price" => (int)str_replace('.', '', $data['2']),
                     "description" => $data['3'],
                     "creator_id" => $data['4'],
-                    "created_at" => $data['5']
+                    "state" => $data['6']
                 ]);
 
 

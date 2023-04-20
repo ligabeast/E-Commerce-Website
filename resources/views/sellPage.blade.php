@@ -5,7 +5,7 @@
         <p class="text-4xl font-semibold">Mein abalo: Verkaufen - Übersicht</p>
         <div class="flex justify-center gap-x-14">
             <div class="flex flex-col items-center  w-10 text-center">
-                <p class="text-4xl">0</p>
+                <p class="text-4xl">{{$quantityActive}}</p>
                 <a class="text-blue-500 font-semibold hover:cursor-pointer hover:text-blue-800">Aktiv</a>
             </div>
             <div class="flex flex-col items-center  w-10 text-center">

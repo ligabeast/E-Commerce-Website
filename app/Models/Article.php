@@ -29,6 +29,7 @@ class Article extends Model
 {
     use HasFactory;
 
-    public $timestamps = false;
+    const UPDATED_AT = null;
+    public $timestamps = true;
 
 }

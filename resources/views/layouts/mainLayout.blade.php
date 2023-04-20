@@ -235,6 +235,12 @@
                             >
                                 Abmelden
                             </p>
+                            <a href="http://127.0.0.1:8000/shoppingCart" class="hover:translate-x-0.5 transition">Warenkorb</a>
+                            <p class="hover:translate-x-0.5 transition">Account Einstellungen</p>
+                            <p class="hover:translate-x-0.5 transition">Meine Käufe</p>
+                            <a href="http://127.0.0.1:8000/sell" class="hover:translate-x-0.5 transition">Meine Verkäufe</a>
+                            <p class="hover:translate-x-0.5 transition">Beobachtungsliste</p>
+                            <p class="hover:translate-x-0.5 transition">Nachrichten</p>
                         @else
                             <p
                                 class="hover:translate-x-0.5 transition"
@@ -244,12 +250,6 @@
                                 Anmelden
                             </p>
                         @endif
-                        <a href="/shoppingCart" class="hover:translate-x-0.5 transition">Warenkorb</a>
-                        <p class="hover:translate-x-0.5 transition">Account Einstellungen</p>
-                        <p class="hover:translate-x-0.5 transition">Meine Käufe</p>
-                        <a href="sell" class="hover:translate-x-0.5 transition">Meine Verkäufe</a>
-                        <p class="hover:translate-x-0.5 transition">Beobachtungsliste</p>
-                        <p class="hover:translate-x-0.5 transition">Nachrichten</p>
                     </div>
                 </div>
             </div>

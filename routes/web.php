@@ -22,6 +22,7 @@ Route::get('/shoppingCart', [ShoppingCartController::class, 'index']);
 Route::get('/sell', [SellController::class, 'index']);
 Route::get('/sell/set_article', [SellController::class, 'listArticleToSell']);
 Route::get('/sell/set_article/category', [SellController::class, 'listArticleInCategory']);
+Route::post('/sell/set_article/list', [SellController::class, 'postArticle']);
 
 
 
