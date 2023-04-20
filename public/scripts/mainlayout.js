@@ -70,10 +70,10 @@ const loggedInOptions = '        <p class="hover:translate-x-0.5 transition"\n o
     '                            >\n' +
     '                                Abmelden\n' +
     '                            </p>'+
-    '                            <a href="http://127.0.0.1:8000/shoppingCart" class="hover:translate-x-0.5 transition">Warenkorb</a>\n' +
+    '                            <a href="../shoppingCart" class="hover:translate-x-0.5 transition">Warenkorb</a>\n' +
     '                            <p class="hover:translate-x-0.5 transition">Account Einstellungen</p>\n' +
     '                            <p class="hover:translate-x-0.5 transition">Meine Käufe</p>\n' +
-    '                            <a href="http://127.0.0.1:8000/sell" class="hover:translate-x-0.5 transition">Meine Verkäufe</a>\n' +
+    '                            <a href="../sell" class="hover:translate-x-0.5 transition">Meine Verkäufe</a>\n' +
     '                            <p class="hover:translate-x-0.5 transition">Beobachtungsliste</p>\n' +
     '                            <p class="hover:translate-x-0.5 transition">Nachrichten</p>';
 

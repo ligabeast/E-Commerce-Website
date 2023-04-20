@@ -9,6 +9,7 @@ use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use Laravel\Socialite\Facades\Socialite;
+use Mockery\Undefined;
 
 class AuthenticationController extends Controller
 {
@@ -32,17 +33,15 @@ class AuthenticationController extends Controller
             $rules = array('email' => 'unique:users,email');    //users table column email
             $validator = Validator::make(['email' => $user->getEmail()], $rules);
 
-            if (!$validator->fails()) {  //fails mean email is already exists
-                $newUser = new User();
-                $newUser->name = $user->getName();
-                $newUser->email = $user->getEmail();
-                $newUser->save();
-            }
-            Auth::loginUsingId(User::whereEmail($user->getEmail())->first()->id);
+            $DbUser = User::updateOrCreate([
+                'name' => $user->name,
+                'email' => $user->email,
+            ]);
+            Auth::login($DbUser);
             return view('homepage', ['angemeldet' => true]);
         }
         catch(\Exception $e){
-            abort(404);
+            return dd($e);
         }
     }
     function loginFacebook(Request $rd){
@@ -55,17 +54,15 @@ class AuthenticationController extends Controller
             $rules = array('email' => 'unique:users,email');    //users table column email
             $validator = Validator::make(['email' => $user->getEmail()], $rules);
 
-            if (!$validator->fails()) {  //fails mean email is already exists
-                $newUser = new User();
-                $newUser->name = $user->getName();
-                $newUser->email = $user->getEmail();
-                $newUser->save();
-            }
-            Auth::loginUsingId(User::whereEmail($user->getEmail())->first()->id);
+            $DbUser = User::updateOrCreate([
+                'name' => $user->name,
+                'email' => $user->email,
+            ]);
+            Auth::login($DbUser);
             return view('homepage', ['angemeldet' => true]);
         }
         catch(\Exception $e){
-            abort(404);
+            return dd($e);
         }
     }
     function logout(Request $rd){
