@@ -15,7 +15,7 @@
                 <p class="text-gray-400 text-sm">oder per Drag & Drop</p>
             </div>
         </div>
-        <p class="text-2xl font-semibold">Vorschau: </p>
+        <p class="text-2xl font-semibold">Vorschau: (max: 5Bilder)</p>
         <div id="dropZone" class="flex gap-5 flex-wrap">
 
         </div>

@@ -46,7 +46,7 @@ class SellController extends Controller
 
             $article->save();
 
-            return view('sellPage');
+            return view('sellPage',['quantityActive' => Article::whereCreatorId(Auth::id())->count()]);
         }
         if(!Auth::check()){
             return abort(401);
