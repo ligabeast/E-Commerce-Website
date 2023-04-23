@@ -167,6 +167,7 @@ signInButton.addEventListener('click', (e)=> {
                     hideSignInContainer();
                     accountOptions.innerHTML = loggedInOptions;
                     accountButtonLabel.textContent = response.name
+                    document.body.appendChild(successfulLogoutDiv);
                 } else {                      //not successful
                     showErrorMessageSignIn();
                 }
