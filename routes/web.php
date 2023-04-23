@@ -16,9 +16,13 @@ use \App\Http\Controllers\SellController;
 |
 */
 
+Route::get('/example', fn () => view('exercises.articleInput'));
+
+Route::get('/search', [IndexController::class, 'search']);
 Route::get('/', [indexController::class, 'index'])->name('homepage');
 Route::get('/cookies', [IndexController::class, 'cookies']);
 Route::get('/shoppingCart', [ShoppingCartController::class, 'index']);
+
 Route::get('/sell', [SellController::class, 'index']);
 Route::get('/sell/set_article', [SellController::class, 'listArticleToSell']);
 Route::get('/sell/set_article/category', [SellController::class, 'listArticleInCategory']);

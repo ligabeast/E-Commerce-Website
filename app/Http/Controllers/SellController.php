@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Article;
 use App\Models\ArticleCategory;
+use App\Models\ArticleHasCategory;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -36,7 +37,7 @@ class SellController extends Controller
     }
 
     function postArticle(Request $rd){
-        if($rd->state && ($rd->state == 'Gebraucht' || $rd->state == 'Neu') && $rd->title && $rd->category && $rd->description && $rd->price && $rd->price > 0 && Auth::check()){
+        if($rd->state && ($rd->state == 'Gebraucht' || $rd->state == 'Neu') && $rd->title && $rd->category && ArticleCategory::whereName($rd->category)->first() && $rd->description && $rd->price && $rd->price > 0 && Auth::check()){
             $article = new Article();
             $article->state = $rd->state;
             $article->name = $rd->title;
@@ -45,6 +46,12 @@ class SellController extends Controller
             $article->creator_id = Auth::id();
 
             $article->save();
+            $category_id = ArticleCategory::whereName($rd->category)->first()->id;
+
+            $article_has_category = new ArticleHasCategory();
+            $article_has_category->article_id = $article->id;
+            $article_has_category->article_category_id = $category_id;
+            $article_has_category->save();
 
             return view('sellPage',['quantityActive' => Article::whereCreatorId(Auth::id())->count()]);
         }

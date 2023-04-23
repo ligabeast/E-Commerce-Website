@@ -253,29 +253,27 @@
                     </div>
                 </div>
             </div>
-            <div class="flex-col flex md:flex-row mx-4 mr-3">
+            <form class="flex-col flex md:flex-row mx-4 mr-3" action="/search" method="get">
                 <input
+                    name="name"
                     type="text"
                     placeholder="Search..."
                     class="text-center w-72 h-12 border-b-2 outline-0 border-gray-500 shadow-sm text-lg"
                 />
                 <div class="my-2 flex justify-center space-x-3">
-                    <select class="outline-0 h-full text-lg hover:cursor-pointer">
-                        <option selected disabled>Kategorie</option>
-                        <option>Elektro</option>
-                        <option>Haushalt</option>
-                        <option>Kleidung</option>
-                        <option>Auto</option>
-                        <option>Fitness</option>
-                        <option>Nahrung</option>
+                    <select class="outline-0 h-full text-lg hover:cursor-pointer" name="category">
+                        <option value="Alle" selected>Alle</option>
+                        @foreach(\App\Models\ArticleCategory::pluck('name') as $category)
+                            <option value="{{$category}}">{{$category}}</option>
+                        @endforeach
                     </select>
                     <input
-                        type="button"
+                        type="submit"
                         class="bg-blue-400 h-12 px-4 rounded-sm text-white tracking-wider hover:bg-blue-700 transition hover:cursor-pointer hover:-translate-y-0.5 hover:shadow-lg"
                         value="Suchen"
                     />
                 </div>
-            </div>
+            </form>
         </div>
     </head>
     <main class="overflow-x-hidden min-h-screen">

@@ -3,6 +3,9 @@ const videoContainer = document.querySelector('#videoUpload');
 const dropZone = document.querySelector('#dropZone');
 let imageArray = [];
 
+const submitButton = document.querySelector('#submit');
+const inputPrice = document.querySelector('#price');
+
 function getImageObject(URL,counter){
     const div = document.createElement('div');
     div.classList.add('group','relative');
@@ -86,3 +89,15 @@ videoContainer.addEventListener('drop', (e) => {
     e.preventDefault();
     loadImageInWebsite(e);
 });
+
+submitButton.addEventListener('click', (e) => {
+   if(inputPrice.value <= 0 ) {
+       e.preventDefault();
+       inputPrice.style.borderColor = 'red';
+       inputPrice.style.borderWidth = '2px';
+   }else{
+       inputPrice.style.borderColor = 'black';
+       inputPrice.style.borderWidth = '1px';
+   }
+});
+
