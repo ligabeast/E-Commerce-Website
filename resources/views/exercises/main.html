@@ -144,6 +144,65 @@ Javascript vs C++
 </script>
 
 
+<!-- Prak 3
+
+nr 5)
+• Set.prototype.* (wie intersection) – Mengenoperationen.
+    ->V8 - ja
+    ->SpiderMonkey - ja
+    ->JavaScriptCore - ja
+
+• Static Blocks in Klassen zur Initialisierung statischer Variablen. Beispiel:
+class CL { static { /* … */ } }
+    ->V8 - ja
+    ->SpiderMonkey - ja
+    ->JavaScriptCore - ja
+
+• Array.prototype.flat(depth)
+    ->V8 - ja
+    ->SpiderMonkey - ja
+    ->JavaScriptCore - ja
+
+• Array.prototype.group zur Gruppierung von Elementen eines Arrays
+    ->V8 - nein
+    ->SpiderMonkey - nein
+    ->JavaScriptCore - ja
+
+• Neues Top-Level-Namespace Objekt “Temporal” als Weiterentwicklung von Date.
+    ->V8 - nein
+    ->SpiderMonkey - nein
+    ->JavaScriptCore - nein
+
+nr 6)
+Google Calendar API
+•	Was ist der Zweck der API? Welche Daten können z.B. ausgetauscht werden?
+Mit der Google Calendar API kann man seinen Kalendar und anstehende Events managen. Es können u.a. Daten wie Kalendareinträge und Farbdefinitionen für Kalendar ausgetauscht werden
+
+•	Welche REST-Prinzipien sind umgesetzt?
+
+Clientserver, Zustandslos, Cache, Einheitliche Schnittstelle, Mehrschichtige Systeme
+•	Auf welchem Level (nach dem Richardson Maturity Model) befindet sich die API?
+Level 3
+
+•	Wie ist eine Versionierung implementiert?
+Im Pfad: https://www.googleapis.com/calendar/v3/calendars/calendarId
+
+Twitter API
+•	Was ist der Zweck der API? Welche Daten können z.B. ausgetauscht werden?
+Die Twitter-API ermöglicht den programmgesteuerten Zugriff auf Twitter. Man kann folgende Kernelemente von Twitter wie Tweets, Direktnachrichten, Spaces, Listen, Benutzer und mehr verwenden.
+
+•	Welche REST-Prinzipien sind umgesetzt?
+Clientserver, Zustandslos, Cache, Einheitliche Schnittstelle, Mehrschichtige Systeme
+
+•	Auf welchem Level (nach dem Richardson Maturity Model) befindet sich die API?
+Level 2
+
+•	Wie ist eine Versionierung implementiert?
+Im Pfad: https://api.twitter.com/2/tweets/search/all
+
+
+-->
+
 
 </body>
 </html>

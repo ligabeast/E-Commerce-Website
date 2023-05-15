@@ -16,7 +16,8 @@ use \App\Http\Controllers\SellController;
 |
 */
 
-Route::get('/example', fn () => view('exercises.articleInput'));
+Route::get('/example', fn () => view('exercises.3-ajax1-static'));
+Route::get('/example2', fn () => view('exercises.3-ajax2-periodic'));
 
 Route::get('/search', [IndexController::class, 'search']);
 Route::get('/', [indexController::class, 'index'])->name('homepage');
