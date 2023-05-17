@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\ShoppingCartController;
 use \App\Http\Controllers\AuthenticationController;
 use \App\Http\Controllers\SellController;
+use \App\Http\Controllers\APIController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,7 +25,7 @@ Route::get('/shoppingCart', [ShoppingCartController::class, 'index']);
 Route::get('/user/{user_id}/addItem/{article_id}', [ShoppingCartController::class, 'addItem']);
 Route::get('/user/{user_id}/removeItem/{article_id}', [ShoppingCartController::class, 'removeItem']);
 
-Route::get('/api/articles', [IndexController::class, 'cookies']);
+Route::any('/api/articles/{id?}', [APIController::class, 'getArticles'])->name('api');
 
 Route::get('/sell', [SellController::class, 'index']);
 Route::get('/sell/set_article', [SellController::class, 'listArticleToSell']);
