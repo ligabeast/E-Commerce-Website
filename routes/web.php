@@ -16,13 +16,15 @@ use \App\Http\Controllers\SellController;
 |
 */
 
-Route::get('/example', fn () => view('exercises.3-ajax1-static'));
-Route::get('/example2', fn () => view('exercises.3-ajax2-periodic'));
-
 Route::get('/search', [IndexController::class, 'search']);
 Route::get('/', [indexController::class, 'index'])->name('homepage');
 Route::get('/cookies', [IndexController::class, 'cookies']);
+
 Route::get('/shoppingCart', [ShoppingCartController::class, 'index']);
+Route::get('/user/{user_id}/addItem/{article_id}', [ShoppingCartController::class, 'addItem']);
+Route::get('/user/{user_id}/removeItem/{article_id}', [ShoppingCartController::class, 'removeItem']);
+
+Route::get('/api/articles', [IndexController::class, 'cookies']);
 
 Route::get('/sell', [SellController::class, 'index']);
 Route::get('/sell/set_article', [SellController::class, 'listArticleToSell']);

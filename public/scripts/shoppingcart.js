@@ -17,6 +17,13 @@ for(const item of allRemoveButtons){
     item.addEventListener('click',(e) => {
         document.querySelector('#price_'+e.target.id).remove()
         e.target.parentElement.parentElement.parentElement.remove();
+        const xhttp = new XMLHttpRequest();
+        xhttp.open("GET", "/user/"+ $('#user_id').val() +"/removeItem/"+e.target.id);
+        xhttp.onload = function() {
+            const xmlDoc = JSON.parse(xhttp.responseXML);
+            console.log(xmlDoc);
+        }
+        xhttp.send();
     });
 }
 

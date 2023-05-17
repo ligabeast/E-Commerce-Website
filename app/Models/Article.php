@@ -23,6 +23,8 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|Article whereId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Article whereName($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Article wherePrice($value)
+ * @property string $state
+ * @method static \Illuminate\Database\Eloquent\Builder|Article whereState($value)
  * @mixin \Eloquent
  */
 class Article extends Model
