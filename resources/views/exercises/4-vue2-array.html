@@ -1,0 +1,45 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+<div id="app">
+    <table>
+        <thead>
+            <tr>
+                <td>name</td>
+                <td>price</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr v-for="item of items">
+                <td>{{ item.name }}</td>
+                <td>{{ item.price }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <button @click="this.items.push({name: 'Test', price: 31})">Neuer Artikel</button>
+</div>
+
+<script>
+    const { createApp } = Vue.
+    createApp({
+        data() {
+            return {
+                items: [
+                    {name: "Reifen", price: 8290},
+                    {name: "Antenne drehbar. Leicht geknickt", price: 1400},
+                    {name: "Opel Kadett C 1992 – wie neu", price: 150000},
+                ]
+            }
+        }
+    }).mount('#app')
+</script>
+
+</body>
+</html>
