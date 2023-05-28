@@ -229,6 +229,14 @@ nr3)
     Da der entwickler von laravel auf twitter gepostet hat, das er von angular auf vue gewechselt ist, da vue.js deutlich einfacher ist.
 
 
+nr6)
+• Was passiert, wenn sehr viele Benutzer:innen gleichzeitig die Lösung verwenden?
+    -> Der Backend Server wird extrem ausgelastet, daher ist diese Methode nicht anwendbar.
+
+• Wie verhält sich die Suche, wenn der Benutzer:innen seine Eingabe sehr schnell mehrfach hintereinander anpasst?
+    -> Da kann es zu inkonsistenzen Clientseitig führen, da die Latenz der Antwort variiert.
+       Daher kann es sein das der Benutzer als Beispiel 3 Anfragen stellt (3 Buchstaben eingegeben), jedoch
+       am Ende, die Antwort zu der ersten Anfrage angezeigt wird, aufgrund einer höheren Latenz.
 
 
 -->

@@ -44,4 +44,7 @@ class IndexController extends Controller
         }
         return view('search',['articles' => $articles]);
     }
+    function search_vue(Request $rd){
+        return view('search_vue',['articles' => Article::all()]);
+    }
 }

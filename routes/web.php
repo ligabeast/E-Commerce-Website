@@ -18,6 +18,7 @@ use \App\Http\Controllers\APIController;
 */
 
 Route::get('/search', [IndexController::class, 'search']);
+Route::get('/searchVue', [IndexController::class, 'search_vue']);
 Route::get('/', [indexController::class, 'index'])->name('homepage');
 Route::get('/cookies', [IndexController::class, 'cookies']);
 
@@ -26,6 +27,7 @@ Route::get('/user/{user_id}/addItem/{article_id}', [ShoppingCartController::clas
 Route::get('/user/{user_id}/removeItem/{article_id}', [ShoppingCartController::class, 'removeItem']);
 
 Route::any('/api/articles/{id?}', [APIController::class, 'getArticles'])->name('api');
+Route::any('/api/shoppingCart', [APIController::class, 'getShoppingCart']);
 
 Route::get('/sell', [SellController::class, 'index']);
 Route::get('/sell/set_article', [SellController::class, 'listArticleToSell']);
