@@ -16,9 +16,10 @@ use \App\Http\Controllers\APIController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::get('/vue/search', [IndexController::class, 'search_vue']);
+Route::get('/vue', [IndexController::class, 'index_vue']);
 
 Route::get('/search', [IndexController::class, 'search']);
-Route::get('/searchVue', [IndexController::class, 'search_vue']);
 Route::get('/', [indexController::class, 'index'])->name('homepage');
 Route::get('/cookies', [IndexController::class, 'cookies']);
 

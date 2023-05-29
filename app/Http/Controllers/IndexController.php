@@ -14,6 +14,9 @@ class IndexController extends Controller
     function index(Request $r){
         return view('homepage');
     }
+    function index_vue(Request $r){
+        return view('homepage_vue');
+    }
     function cookies(Request $r){
         return view('cookies');
     }

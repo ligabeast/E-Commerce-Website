@@ -1,0 +1,59 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <title>Document</title>
+</head>
+<body>
+
+<div id="app">
+    <a></a>
+    <b></b>
+</div>
+
+<script>
+    const a = {
+        data() {
+            return {
+                color: 'red'
+            }
+        },
+        methods:{
+            changeColor(){
+                this.color = (this.color === 'red') ? 'green' : 'red';
+                this.$emit('box', this.color);
+            }
+        },
+        template: `<button @click="changeColor">Change Color</button>`
+    };
+
+    const b = {
+        data() {
+            return {
+                style: 'red'
+            }
+        },
+        methods:{
+            setColor(color){
+                this.style=color;
+            }
+        },
+        template: `<div @changeColor="setColor" style="width: 100px; height: 100px" :style="{backgroundColor : style }"></div>`
+    };
+
+    const application = Vue.createApp({
+        data(){
+            return {};
+        },
+        components: {
+            a,
+            b
+        }
+    }).mount('#app');
+</script>
+
+</body>
+</html>

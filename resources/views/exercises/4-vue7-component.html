@@ -1,0 +1,49 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <title>Document</title>
+</head>
+<body>
+
+<div id="app">
+    <counter></counter>
+</div>
+
+<script>
+    const counter =  {
+        data(){
+            return {
+                counter : 1
+            }
+        },
+        methods:{
+            incCounter(event){
+                this.counter++;
+            },
+            decCounter(event){
+                this.counter--;
+            }
+        },
+        template: `<div>
+        <p>Click Counter : {{counter}}</p>
+        <button @click="incCounter">Increment</button>
+        <button @click="decCounter">Decrement</button>
+        </div>`
+    };
+
+    const application = Vue.createApp({
+        data(){
+            return {};
+        },
+        components: {
+            counter
+        }
+    }).mount('#app');
+</script>
+
+</body>
+</html>
