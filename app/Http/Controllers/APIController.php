@@ -12,6 +12,8 @@ class APIController extends Controller
 {
     function getArticles(Request $rd, string $id = ''){
         $search = $rd->search ?? '';
+        $limit = $rd->limit ?? 1000000;
+        $offset = $rd->offset ?? 0;
         $post_name = $rd->name ?? '';
         $post_state = $rd->state ?? 'Neu';
         $post_price = $rd->price ?? '';
@@ -41,7 +43,7 @@ class APIController extends Controller
             }
             return response()->json(['result' => $msg]);
         }else if(!$id){
-            return response()->json(json_encode(Article::where('name','Like','%'.$search.'%')->get()));
+            return response()->json(json_encode(Article::where('name','Like','%'.$search.'%')->offset($offset)->limit($limit)->get()));
         }
         else{
             return response()->json(json_encode(Article::whereId($id)->get()));

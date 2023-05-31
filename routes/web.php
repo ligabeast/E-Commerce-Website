@@ -22,6 +22,7 @@ Route::get('/vue', [IndexController::class, 'index_vue']);
 Route::get('/search', [IndexController::class, 'search']);
 Route::get('/', [indexController::class, 'index'])->name('homepage');
 Route::get('/cookies', [IndexController::class, 'cookies']);
+Route::get('/imprint', [IndexController::class, 'imprint']);
 
 Route::get('/shoppingCart', [ShoppingCartController::class, 'index']);
 Route::get('/user/{user_id}/addItem/{article_id}', [ShoppingCartController::class, 'addItem']);

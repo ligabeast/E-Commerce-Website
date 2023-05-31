@@ -292,7 +292,7 @@
             <a class="hover:font-semibold hover:cursor-pointer"
             >Datenschutzerklärung</a
             >
-            <a class="hover:font-semibold hover:cursor-pointer"
+            <a href="/imprint" class="hover:font-semibold hover:cursor-pointer"
             >Impressum</a
             >
             <a class="hover:font-semibold hover:cursor-pointer"

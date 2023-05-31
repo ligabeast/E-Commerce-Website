@@ -20,6 +20,9 @@ class IndexController extends Controller
     function cookies(Request $r){
         return view('cookies');
     }
+    function imprint(Request $r){
+        return view('imprint');
+    }
     function search(Request $rd){
         $articles = null;
         $selectedCategory = $rd->category != 'Alle' ?? false;

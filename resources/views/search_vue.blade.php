@@ -3,7 +3,6 @@
 @section('content')
     <input type="text" hidden id="user_id" value="{{Auth::id()}}">
 
-
     <div class="mx-auto max-w-xl">
         <template v-for="(article, index) in articles">
             <template v-if="article.show" :key="article.id">
@@ -32,6 +31,12 @@
                     </div>
                 </div>
             </template>
+        </template>
+    </div>
+    <div class="w-100 m-20 flex items-center justify-center">
+        <template v-for="i in pages" :key="i">
+            <a @click="selectPage(i)" :class="{'text-blue-500' : selectedPage === i }" class="m-5 font-semibold text-lg hover:text-blue-600  hover:cursor-pointer" v-if="i % pageSize === 0 || i === selectedPage || i+1 === selectedPage || i-1 === selectedPage || i === pages">@{{ i  }}</a>
+            <a v-else>.</a>
         </template>
     </div>
     <script src="{{asset('scripts/searchVue.js')}}"></script>
