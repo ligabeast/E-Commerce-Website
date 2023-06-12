@@ -18,6 +18,7 @@ use \App\Http\Controllers\APIController;
 */
 Route::get('/vue/search', [IndexController::class, 'search_vue']);
 Route::get('/vue', [IndexController::class, 'index_vue']);
+Route::get('/vue/sell/set_article/category', [SellController::class, 'listArticleInCategoryVue']);
 
 Route::get('/search', [IndexController::class, 'search']);
 Route::get('/', [indexController::class, 'index'])->name('homepage');

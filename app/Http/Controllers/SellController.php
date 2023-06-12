@@ -36,6 +36,16 @@ class SellController extends Controller
         return view('listItemNotFound');
     }
 
+    function listArticleInCategoryVue(Request $rd){
+        if(!Auth::check()){
+            return abort(401);
+        }
+        if(ArticleCategory::where('name','=',$rd->category)->first()) { //exists
+            return view('listItem_vue',['category' => $rd->category]);
+        }
+        return view('listItemNotFound');
+    }
+
     function postArticle(Request $rd){
         if($rd->state && ($rd->state == 'Gebraucht' || $rd->state == 'Neu') && $rd->title && $rd->category && ArticleCategory::whereName($rd->category)->first() && $rd->description && $rd->price && $rd->price > 0 && Auth::check()){
             $article = new Article();
