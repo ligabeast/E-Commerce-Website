@@ -1,0 +1,40 @@
+@use "app"
+
+$primary_color : #3dd5f3
+
+.header__navigation--showing
+    background-color: $primary_color
+
+.header__navigation--hidden
+    display : none
+
+.table__header--color
+    color : $primary_color
+
+.table__header--size
+    font-size: 30px
+
+.table__body--color
+    color : $primary_color
+
+tr
+    td
+        font-size: 20px
+
+@import "_variables.scss"
+
+tr
+    td
+        font-family: $font-family-sans-serif
+
+header
+    div
+        font-size: app.$font-size-base
+
+@mixin transform($property: rotate(45deg))
+    -webkit-transform: $property
+    -ms-transform: $property
+    transform: $property
+
+.price
+    @include transform(rotate(30deg))
