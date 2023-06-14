@@ -1,6 +1,7 @@
 @extends('layouts.mainLayout')
 
 @section('content')
+    <div></div>
     <div class="z-30 relative">
         <div class="swiperHintergrund relative">
             <div class="swiper-wrapper absolute max-w-full h-auto">

@@ -41,6 +41,17 @@
     </button>
 </div>
 
+<div class="hidden relative" id="maintainContainer">
+    <div class="flex flex-col space-x-2 absolute left-0 top-0 bg-green-400 h-50 w-50 text-center p-5 text-white rounded-xl z-50">
+        <div class="w-full p-2">
+            <button id="maintainButton" class="bg-white text-black w-5 rounded-lg font-bold float-right">X</button>
+        </div>
+        <p>In Kürze verbessern wir Abalo für Sie!</p>
+        <p>Nach einer kurzen Pause sind wir wieder</p>
+        <p>für Sie da! Versprochen.</p>
+    </div>
+</div>
+
 <div class="hidden" id="signInContainer">
     <div
         class="fixed z-50 inset-0 bg-black opacity-30 justify-center items-center"

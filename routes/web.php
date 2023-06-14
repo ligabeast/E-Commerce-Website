@@ -34,6 +34,7 @@ Route::get('/user/{user_id}/removeItem/{article_id}', [ShoppingCartController::c
 
 Route::any('/api/articles/{id?}', [APIController::class, 'getArticles'])->name('api');
 Route::any('/api/shoppingCart', [APIController::class, 'getShoppingCart']);
+Route::post('/api/articles/{id?}/sold', [APIController::class, 'sold']);
 
 Route::get('/sell', [SellController::class, 'index']);
 Route::get('/sell/set_article', [SellController::class, 'listArticleToSell']);

@@ -282,3 +282,30 @@ registerButton.addEventListener('click',(e) => {
 function showErrorMessage(){
     alert("FALSE");
 }
+
+$('#maintainButton').click((event) => {
+   $('#maintainContainer').hide();
+});
+
+const socket = new WebSocket('ws://localhost:8080/abalo');
+
+socket.onopen = (event) => {
+    console.log('Connection established');
+    console.log(event);
+};
+
+socket.onmessage = msg => {
+    if(msg.data.data === 'Wartungsarbeiten'){
+        $('#maintainContainer').show();
+    }
+    if(msg.data.data === 'sold'){
+        $('#maintainContainer').show();
+    }
+};
+
+socket.onclose = (closeEvent) => {
+    console.log(
+        'Connection closed' +
+        ': code=', closeEvent.code,
+        '; reason=', closeEvent.reason);
+};

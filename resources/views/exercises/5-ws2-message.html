@@ -1,0 +1,56 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<input id="input" type="text">
+<button id="button">Submit</button>
+<div>
+    <h1>Messages:</h1>
+    <ul id="messages">
+
+    </ul>
+</div>
+
+<script >
+    console.log("Hello");
+
+    let socket = new WebSocket('ws://localhost:8080/demo-1');
+
+    $('#button').click((event) => {
+        const obj = {
+            data : $('#input').val(),
+            id : 1
+        }
+        socket.send(JSON.stringify((obj)));
+    });
+
+    socket.onopen = (event) => {
+        console.log('Connection established');
+        console.log(event);
+    };
+    socket.onclose = (closeEvent) => {
+        console.log(
+            'Connection closed' +
+            ': code=', closeEvent.code,
+            '; reason=', closeEvent.reason);
+    };
+    socket.onmessage = (msgEvent) => {
+        let msg = (JSON.parse(msgEvent.data));
+        console.log('Message received', msg);
+        const element = document.createElement('li');
+        element.textContent = msg.data;
+        if(msg.id === 1) {
+            $('#messages').append(element);
+        }
+    };
+</script>
+
+</body>
+</html>

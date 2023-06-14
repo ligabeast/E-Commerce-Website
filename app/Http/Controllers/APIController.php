@@ -60,4 +60,23 @@ class APIController extends Controller
         }
         return response()->json(json_encode($articles));
     }
+    function sold(Request $rd){
+        $article = Article::whereId($rd->id)->first();
+        if($article){
+            \Ratchet\Client\connect('ws://localhost:8080/abalo')->then(function($conn)
+            use ($rd){
+                $conn->on('message', function($msg) use ($conn, $rd) {
+                    $conn->close();
+                });
+                $conn->send('{"data":"sold", "id": '. $rd->id .'}');
+            }, function ($e) {
+                echo "Could not connect: {$e->getMessage()}\n";
+            });
+            //Article::whereId($rd->id)->delete();
+            return "Successfully";
+        }
+        else{
+            return "Invalid ID";
+        }
+    }
 }
